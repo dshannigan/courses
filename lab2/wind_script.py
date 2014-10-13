@@ -31,13 +31,14 @@ for j in range(0, 365, 30):
     s_001_tif = "H:\\esm296-4f\\labs\\lab2\\out\\s_%03d.tif" % j
 
     # Process: Make NetCDF Raster Layer
-    arcpy.MakeNetCDFRasterLayer_md(v_nc, "uwnd", "lon", "lat", "u_%03d" % j, "", "time %j", "BY_INDEX")
+    arcpy.MakeNetCDFRasterLayer_md(v_nc, "uwnd", "lon", "lat", "u_%03d" % j, "", "time %03d" % j, "BY_INDEX")
 
     # Process: Make NetCDF Raster Layer (2)
-    arcpy.MakeNetCDFRasterLayer_md(u_nc, "vwnd", "lon", "lat", "v_%03d" % j, "", "time %j", "BY_INDEX")
+    arcpy.MakeNetCDFRasterLayer_md(u_nc, "vwnd", "lon", "lat", "v_%03d" % j, "", "time %03d" % j, "BY_INDEX")
 
     # Process: Raster Calculator
     arcpy.gp.RasterCalculator_sa("SquareRoot( Square('%s') + Square('%s') )" % (u_001, v_001), s_001)
 
     # Process: Resample
     arcpy.Resample_management(s_001, s_001_tif, "0.25 0.25", "BILINEAR")
+
