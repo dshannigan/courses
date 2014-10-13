@@ -9,6 +9,7 @@
 # Import arcpy module
 import arcpy
 
+
 # Check out any necessary licenses
 arcpy.CheckOutExtension("spatial")
 
