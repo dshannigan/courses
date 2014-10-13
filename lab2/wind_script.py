@@ -43,4 +43,7 @@ for j in range(0, 365, 30):
     # Process: Resample
     arcpy.Resample_management(s_001, s_001_tif, "0.25 0.25", "BILINEAR")
 
+<<<<<<< HEAD
 s_tifs = ["h:\\esm296-4f\\labs\\lab2\\out\\s_%03d.tif" % j for j in range(1, 365, 30)]
+=======
+>>>>>>> 6fa665664ee6ec0c15138f9fb96a5d2254dc0659
