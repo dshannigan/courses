@@ -18,6 +18,10 @@ arcpy.env.overwriteOutput = True
 # Local variables:
 v_nc = "H:\\esm296-4f\\labs\\lab2\\raw\\uwnd.sig995.2013.nc"
 u_nc = "H:\\esm296-4f\\labs\\lab2\\raw\\vwnd.sig995.2013.nc"
+in_countries = "H:\\esm296-4f\\labs\\lab2\\raw\\World_EEZ_v8_2014.shp"
+s_avg_tif = "H:\\esm296-4f\\labs\\lab2\\out\\s_avg.tif"
+out_countries = "H:\\esm296-4f\\labs\\lab2\\lab2.gdb\\countries"
+s_countries = "H:\\esm296-4f\\labs\\lab2\\lab2.gdb\\s_countries"
 
 # loop over a range of values for j
 for j in range(0, 365, 30):
@@ -43,7 +47,16 @@ for j in range(0, 365, 30):
     # Process: Resample
     arcpy.Resample_management(s_001, s_001_tif, "0.25 0.25", "BILINEAR")
 
-<<<<<<< HEAD
-s_tifs = ["h:\\esm296-4f\\labs\\lab2\\out\\s_%03d.tif" % j for j in range(1, 365, 30)]
-=======
->>>>>>> 6fa665664ee6ec0c15138f9fb96a5d2254dc0659
+
+s_tifs = ["h:\\esm296-4f\\labs\\lab2\\out\\s_%03d.tif" % j for j in range(0, 365, 30)]
+
+arcpy.gp.CellStatistics_sa(s_tifs, s_avg_tif, "MEAN", "DATA")
+
+# Process: Copy Features
+arcpy.CopyFeatures_management(in_countries, out_countries, "", "0", "0", "0")
+# Process: Cell Statistics
+arcpy.gp.CellStatistics_sa(s_tifs, s_avg_tif, "MEAN", "DATA")
+# Process: Zonal Statistics as Table
+arcpy.gp.ZonalStatisticsAsTable_sa(out_countries, "COUNTRY", s_avg_tif, s_countries, "DATA", "MIN_MAX_MEAN")
+# Process: Join Field
+arcpy.JoinField_management(out_countries, "COUNTRY", s_countries, "COUNTRY", "Min;Max;Mean")
