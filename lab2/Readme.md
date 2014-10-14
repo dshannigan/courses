@@ -1,18 +1,25 @@
-## ESM 296-4f Project Proposal
+## ESM 296-4f: Lab 2
 
-## Group Members
+## Maximum Wind Speeds in Exclusive Economic Zones (EEZ)
+![](wind_EEZ.png)
 
-Daniel Hannigan
-Christopher Uraine
+## Top 3 Countries (Max)
 
-## Species
+1.) Heard and McDonald Islands
 
-Hypophthalmichthys molitrix (a.k.a. Asian Carp)
+2.) Kerguelen Islands
 
-## Description
+3.) Crozet Islands
 
-"The silver carp (Hypophthalmichthys molitrix) is a species of freshwater cyprinid fish, a variety of Asian carp native to north and northeast Asia. It is cultivated in China. Pound for pound, more silver carp are produced worldwide in aquaculture than any other species. They are usually farmed in polyculture with other Asian carp, or sometimes Indian carp or other species. It has been introduced to, or spread by connected waterways, into at least 88 countries around the world. The most common reason for importation was for use in aquaculture, but enhancement of wild fisheries and water quality control were also important reasons for importation." (Kolar et al. 2005.)
 
-## Species Extent
+## Top 3 Countries (Mean)
 
-![](asian_carp_extent.png)
+1.) Crozet Islands
+
+2.) Macquarie Island
+
+3.) Kerguelen Islands
+
+## Final Model
+
+![](wind_script.py)
