@@ -1,7 +1,7 @@
 ## ESM 296-4f: Lab 3
 
 ## Coastal Exposure with, and without Habitat
-![](coastal_exposure.png)
+![](coast_exposure.png)
 
 ##Question 1
 
