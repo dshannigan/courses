@@ -1,6 +1,6 @@
 ## ESM 296-4f: Lab 3
 
-## Maximum Wind Speeds in Exclusive Economic Zones (EEZ)
+## Coastal Exposure with, and without Habitat
 ![](coastal_exposure.png)
 
 ##Question 1
